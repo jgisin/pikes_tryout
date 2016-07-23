@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-6 col-xs-offset-2">
+      <h2>Primary Contact</h2>
+    </div>
+  </div>
+  <%= render partial: "contact_form", locals: {contact: @primary_contact, progress: 30} %>
+
+  <div class="row">
+    <div class="col-xs-6 col-xs-offset-2">
+      <h2>Secondary Contact</h2>
+    </div>
+  </div>
+  <%= render partial: "contact_form", locals: {contact: @secondary_contact, progress: 50} %>
+</div>
