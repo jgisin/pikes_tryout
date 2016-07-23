@@ -1,0 +1,21 @@
+<div class="container">  <table class="table table_striped">
+    <thead>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Cell Phone</th>
+      <th>Payed?</th>
+      <th>Details</th>
+    </thead>
+    <tbody>
+      <% @players.each do |player| %>
+        <tr>
+          <td><%= player.name %></td>
+          <td><%= player.contacts.first.email %></td>
+          <td><%= player.contacts.first.cell_phone %></td>
+          <td></td>
+          <td><%= link_to "Player Details", player_path(player), class: 'btn btn-default' %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160723015736) do
+ActiveRecord::Schema.define(version: 20160723053754) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,7 +27,9 @@ ActiveRecord::Schema.define(version: 20160723015736) do
     t.string   "zip"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
-    t.integer  "contact_type"
+    t.string   "contact_type"
+    t.integer  "player_id"
+    t.index ["player_id"], name: "index_contacts_on_player_id", using: :btree
   end
 
   create_table "players", force: :cascade do |t|

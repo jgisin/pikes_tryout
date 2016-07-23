@@ -1,2 +1,11 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.header-wrap {
+  background: black;
+  /*border removed*/
+  padding:2%;
+  box-shadow: 0 5px 10px #aaa;
+  -webkit-box-shadow: 0 5px 10px #aaa;
+  -moz-box-shadow: 0 5px 10px #aaa;
+}
