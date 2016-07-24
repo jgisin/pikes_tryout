@@ -13,6 +13,7 @@ class Player < ApplicationRecord
     def send_confirmation_email(id)
       player = Player.find(id)
       ApplicationMailer.sign_up(player).deliver!
+      ApplicationMailer.notify_admin(player).deliver!
     end
     handle_asynchronously :send_confirmation_email
   end
