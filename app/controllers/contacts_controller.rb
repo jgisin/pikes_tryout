@@ -19,6 +19,7 @@ class ContactsController < ApplicationController
     if params[:contact][:contact_type] == "0"
       redirect_to step_three_path(player_id: params[:contact][:player_id])
     else
+      @contact.player.send_mail
       redirect_to payment_path
     end
   end

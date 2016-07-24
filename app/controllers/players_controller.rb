@@ -21,6 +21,7 @@ class PlayersController < ApplicationController
   def create
     @player = Player.new(player_params)
     if @player.save
+      @player.send_mail
       redirect_to step_two_path(player_id: @player.id)
     end
   end
