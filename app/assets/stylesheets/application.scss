@@ -1,6 +1,9 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+$duration: .20;
+$easing: ease-in-out;
+
 .header-wrap {
   background: black;
   /*border removed*/
@@ -8,4 +11,72 @@
   box-shadow: 0 5px 10px #aaa;
   -webkit-box-shadow: 0 5px 10px #aaa;
   -moz-box-shadow: 0 5px 10px #aaa;
+  font-family: "Depressionist";
+}
+
+@font-face{
+  font-family: "Depressionist";
+  src: url('Depressionist_3_Revisited_2010.ttf') format('truetype');
+}
+[data-wipe] {
+  display: inline-block;
+  padding: 12px 18px;
+  text-decoration: none;
+  position: relative;
+  border: 2px solid #445561;
+  border-radius: 3px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-align: left;
+  color: #445561;
+  overflow: hidden;
+  font-size: 36px;
+  font-family: "Depressionist";
+
+  &:before, &:after {
+    content: attr(data-wipe);
+    padding-top: inherit;
+    padding-bottom: inherit;
+    white-space: nowrap;
+    position: absolute;
+    top: 0;
+    overflow: hidden;
+    color: #F1F1F2;
+    background: black;
+  }
+
+  &:before {
+    left: 0;
+    text-indent: 18px;
+    width: 0;
+  }
+
+  &:after {
+    padding-left: inherit;
+    padding-right: inherit;
+    left: 100%;
+    text-indent: calc(-100% - 36px);
+    transition: $duration + s $easing;
+  }
+
+  &:hover {
+    &:before {
+      width: 100%;
+      transition: width $duration + s $easing;
+    }
+
+    &:after {
+      left: 0;
+      text-indent: 0;
+      transition: 0s $duration + s $easing;
+    }
+  }
+}
+
+#main {
+  margin-top: 200px;
+}
+
+#admin {
+  margin-top: -60px;
 }
