@@ -11,7 +11,7 @@
         <tr>
           <td><%= player.name %></td>
           <td><%= player.email %></td>
-          <td><%= player.contacts.first.cell_phone %></td>
+          <td><%= player.contacts.length > 0 ? player.contacts.first.cell_phone : "" %></td>
           <td></td>
           <td><%= link_to "Player Details", player_path(player), class: 'btn btn-default' %></td>
         </tr>
