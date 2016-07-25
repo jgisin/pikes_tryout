@@ -9,6 +9,6 @@ class ApplicationMailer < ActionMailer::Base
 
   def notify_admin(player)
     @player = player
-    mail(to: ENV['ADMIN_EMAIL'], subject: "#{@player.name} has registered to tryout")
+    mail(to: ENV['ADMIN_EMAIL'], subject: "#{@player.name} has registered to tryout.")
   end
 end
