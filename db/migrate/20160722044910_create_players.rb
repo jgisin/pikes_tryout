@@ -7,7 +7,7 @@ class CreatePlayers < ActiveRecord::Migration[5.0]
       t.date :dob
       t.string :present_team
       t.string :level
-      t.string :desired_position
+      t.string :ired_position
 
       t.timestamps
     end

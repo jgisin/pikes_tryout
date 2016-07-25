@@ -1,5 +1,5 @@
   var paymentForm = new SqPaymentForm({
-    applicationId: '1', // <-- Add your application ID here
+    applicationId: 'sandbox-sq0idp-Gz2JHVsdpF1Jgx-n7RjPjw', // <-- Add your application ID here
     inputClass: 'sq-input',
     inputStyles: [
       {
@@ -28,6 +28,7 @@
           errors.forEach(function(error) { console.log(error.message); });
         } else {
           // handle nonce
+          postNonce(nonce);
           console.log('Nonce received:');
           console.log(nonce);
         }
@@ -62,4 +63,16 @@
 
   function requestCardNonce() {
     paymentForm.requestCardNonce();
+  }
+
+  function postNonce(nonce){
+    $.ajax({
+      type: "POST",
+      url: '/process_payment',
+      data: nonce,
+      success: function(){
+        console.log('success')
+      },
+      dataType: 'json'
+    });
   }

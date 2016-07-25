@@ -29,6 +29,10 @@ class PlayersController < ApplicationController
     end
   end
 
+  def process
+    Payment.new(params[:nonce])
+  end
+
   private
 
   def player_params

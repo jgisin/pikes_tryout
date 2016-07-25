@@ -1,3 +1,4 @@
+require 'process_payment'
 class ContactsController < ApplicationController
 
   def step_two
@@ -11,6 +12,11 @@ class ContactsController < ApplicationController
   end
 
   def payment
+  end
+
+  def process_payment
+    puts params.keys.first
+    pay = Payment.new(params.keys.first)
   end
 
   def create
