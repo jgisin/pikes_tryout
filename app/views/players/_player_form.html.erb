@@ -7,14 +7,20 @@
       <%= f.label :last_name %>
       <%= f.text_field :last_name, class: 'form-control' %>
 
+      <%= f.label :email %>
+      <%= f.text_field :email, class: 'form-control' %>
+
       <%= f.label "Date of Birth" %>
       <%= f.date_field :dob, class: 'form-control', value: '1990-01-01' %>
 
       <%= f.label :present_team %>
       <%= f.text_field :present_team, class: 'form-control' %>
 
-      <%= f.label :level %>
+      <%= f.label "Current Level" %>
       <%= f.text_field :level, class: 'form-control' %>
+
+      <%= f.label "Desired Position" %>
+      <%= f.text_field :desired_position, class: 'form-control' %>
 
       <br/>
       <%= f.submit "Begin Registration", class: 'btn btn-primary btn-block' %>

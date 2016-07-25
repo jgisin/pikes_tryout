@@ -50,11 +50,13 @@ ActiveRecord::Schema.define(version: 20160724053117) do
   create_table "players", force: :cascade do |t|
     t.string   "first_name"
     t.string   "last_name"
+    t.string   "email"
     t.date     "dob"
     t.string   "present_team"
     t.string   "level"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.string   "desired_position"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
 
 end

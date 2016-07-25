@@ -1,22 +1,25 @@
 <div class="container">
   <%= link_to "Back to players index", players_path, class: 'btn btn-default' %>
-  <h1><%= @player.name %></h1>
+  <h1 class='text-center well'><%= @player.name %></h1>
 
-    <p>Date of Birth: <%= @player.dob %></p>
+  <div class='text-center'>  <p>Email: <a href='mailto:<%= @player.email %>'><%= @player.email %></a></p>
+    <p>Date of Birth: <%= @player.dob.to_formatted_s(:long_ordinal) %></p>
     <p>Present Team: <%= @player.present_team %></p>
     <p>Current Level: <%= @player.level %></p>
+    <p>Desired Position: <%= @player.desired_position %></p>
 
-  <h3>Primary Contact Information</h3>
-    <p><%= @primary.email %></p>
+    <h3 class="well">Player Contact Information:</h3>
     <p><%= @primary.address %><br/>
     <%= "#{@primary.city}, #{@primary.state} #{@primary.zip}" %></p>
     <p>Cell: <%= @primary.cell_phone %></p>
     <p>Home: <%= @primary.home_phone %></p>
 
-  <h3>Secondary Contact Information</h3>
-    <p><%= @secondary.email %></p>
+    <h3 class='well'>Emergency Contact Information</h3>
+    <p><%= @secondary.name %></p>
+    <p><%= @primary.email %></p>
     <p><%= @secondary.address %><br/>
     <%= "#{@secondary.city}, #{@secondary.state} #{@secondary.zip}" %></p>
     <p>Cell: <%= @secondary.cell_phone %></p>
     <p>Home: <%= @secondary.home_phone %></p>
+  </div>
 </div>

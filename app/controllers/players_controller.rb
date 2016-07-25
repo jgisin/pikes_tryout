@@ -1,4 +1,8 @@
 class PlayersController < ApplicationController
+  USERS = { "admin" => "password" }
+
+  before_action :authenticate, :only => [:index, :show]
+
 
   def landing
 
@@ -10,8 +14,8 @@ class PlayersController < ApplicationController
 
   def show
     @player = Player.find(params[:id])
-    @primary = @player.contacts.find_by(contact_type: 0)
-    @secondary = @player.contacts.find_by(contact_type: 1)
+    @primary = @player.contacts.find_by(contact_type: 0) || Contact.new
+    @secondary = @player.contacts.find_by(contact_type: 1) || Contact.new
   end
 
   def new
@@ -21,7 +25,6 @@ class PlayersController < ApplicationController
   def create
     @player = Player.new(player_params)
     if @player.save
-      @player.send_mail
       redirect_to step_two_path(player_id: @player.id)
     end
   end
@@ -29,6 +32,12 @@ class PlayersController < ApplicationController
   private
 
   def player_params
-    params.require(:player).permit(:first_name, :last_name, :dob, :present_team, :level)
+    params.require(:player).permit(:first_name, :last_name, :email, :dob, :present_team, :level, :desired_position)
+  end
+
+  def authenticate
+    authenticate_or_request_with_http_digest do |username|
+      USERS[username]
+    end
   end
 end

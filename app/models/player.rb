@@ -1,5 +1,5 @@
 class Player < ApplicationRecord
-  has_many :contacts
+  has_many :contacts, dependent: :destroy
 
   def name
     "#{self.first_name} #{self.last_name}"
