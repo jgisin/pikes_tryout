@@ -1,5 +1,5 @@
 class PlayersController < ApplicationController
-  USERS = { "admin" => "password" }
+  USERS = { "brycejankowski" => "xzqpt3756" }
 
   before_action :authenticate, :only => [:index, :show]
 
