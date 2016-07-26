@@ -17,7 +17,7 @@ class ContactsController < ApplicationController
   def process_payment
     puts params.keys.first
     pay = Payment.new(params.keys.first)
-    redirect_to landing_path
+    redirect_to root_path
   end
 
   def create
