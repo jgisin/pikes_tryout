@@ -10,11 +10,18 @@
   </head>
 
   <body>
-   <div class="header-wrap">
-     <h1 class="text-center" style="color: white;"><img src="logo.png"/><%= link_to "Pikes Peak Vigilantes Tryouts / Training Camp", root_path, style: 'color: white;'  %></h1>
-    <%= link_to "Administrators", players_path, class: 'btn btn-default pull-right', id: 'admin' %>
-   </div>
-   <br/>
-    <%= yield %>
+    <div id="background">
+        <div class="header-wrap row">
+        <div class="col-xs-8 col-xs-offset-2">
+          <h1 class="text-center " style="color: white;"><%= image_tag('logo.png') %><%= link_to "Pikes Peak Vigilantes Tryouts / Training Camp", root_path, style: 'color: white;'  %></h1>
+        </div>
+        <div class="col-xs-2">
+          <br/><br>
+          <%= link_to "Administrators", players_path, class: 'btn btn-default' %>
+        </div>
+      </div>
+      <br/>
+      <%= yield %>
+    </div>
   </body>
 </html>

@@ -1,8 +1,7 @@
 class PlayersController < ApplicationController
   USERS = { "brycejankowski" => "xzqpt3756" }
 
-  before_action :authenticate, :only => [:index, :show]
-
+  before_action :authenticate, except: [:new, :landing, :create]
 
   def landing
 
