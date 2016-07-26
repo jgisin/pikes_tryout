@@ -7,8 +7,8 @@ class Payment
 #   ACCESS_TOKEN
   def initialize(nonce)
     @transaction_api = SquareConnect::TransactionApi.new()
-    @location_id = "CBASEBhwi5EnubxE18sDRr89I-I"
-    @access_token = "sq0atb-UzxBwXICPZ4d4axNZoCJSw"
+    @location_id = ENV['LOCATION_ID']
+    @access_token = ENV['ACCESS_TOKEN']
     @nonce = nonce
     @request_body = {
 
