@@ -1,7 +1,7 @@
 class PlayersController < ApplicationController
   USERS = { "brycejankowski" => "xzqpt3756" }
 
-  before_action :authenticate, except: [:new, :landing, :create]
+  before_action :authenticate, except: [:new, :landing, :create, :success]
 
   def landing
 
@@ -28,7 +28,9 @@ class PlayersController < ApplicationController
     end
   end
 
-
+  def success
+    @player = Player.find(params[:player_id])
+  end
 
   private
 

@@ -62,7 +62,7 @@
   });
 
   function requestCardNonce() {
-    paymentForm.requestCardNonce();
+      paymentForm.requestCardNonce()
   }
 
   function postNonce(nonce){
@@ -72,7 +72,10 @@
       data: nonce,
       success: function(){
         console.log('success')
+          window.location.replace('/success')
       },
       dataType: 'json'
+    }).fail(function(jqXHR, status, error){
+        alert('Error: ' + error);
     });
   }
