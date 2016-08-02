@@ -17,6 +17,8 @@ class ContactsController < ApplicationController
   def process_payment
     puts params.keys.first
     pay = Payment.new(params.keys.first)
+    @player = Player.find(params[:player_id])
+    @player.send_mail
     redirect_to root_path
   end
 
@@ -27,7 +29,7 @@ class ContactsController < ApplicationController
       redirect_to step_three_path(player_id: params[:contact][:player_id])
     else
       @contact.player.send_mail
-      redirect_to payment_path
+      redirect_to payment_path(player_id: params[:contact][:player_id])
     end
   end
 

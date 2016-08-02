@@ -13,6 +13,7 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'square_connect'
 gem 'delayed_job_active_record'
+gem 'figaro'
 
 
 group :development, :test do
@@ -25,7 +26,7 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'letter_opener'
-  gem 'figaro'
+  gem 'hirb'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

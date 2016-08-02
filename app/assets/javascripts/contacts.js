@@ -62,7 +62,7 @@
   });
 
   function requestCardNonce() {
-      paymentForm.requestCardNonce()
+      paymentForm.requestCardNonce();
   }
 
   function postNonce(nonce){
@@ -70,12 +70,12 @@
       type: "POST",
       url: '/process_payment',
       data: nonce,
-      success: function(){
-        console.log('success')
-          window.location.replace('/success')
-      },
-      dataType: 'json'
+      dataType: 'text',
     }).fail(function(jqXHR, status, error){
+        console.log(jqXHR + "   " + status + "   " +  error);
         alert('Error: ' + error);
+    }).done(function(data){
+        console.log('success');
+        window.location.replace('/success?player_id=' + window.location.search[window.location.search.length - 1]);
     });
   }
