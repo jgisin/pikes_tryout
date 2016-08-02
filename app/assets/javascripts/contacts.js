@@ -68,7 +68,7 @@
   function postNonce(nonce){
     $.ajax({
       type: "POST",
-      url: '/process_payment',
+        url: '/process_payment?player_id=' +  window.location.search[window.location.search.length - 1],
       data: nonce,
       dataType: 'text',
     }).fail(function(jqXHR, status, error){
