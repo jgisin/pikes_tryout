@@ -14,6 +14,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'square_connect'
 gem 'delayed_job_active_record'
 gem 'figaro'
+gem 'rails_12factor'
 
 
 group :development, :test do
