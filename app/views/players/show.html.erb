@@ -4,6 +4,8 @@
 
   <div class='text-center'>  <p>Email: <a href='mailto:<%= @player.email %>'><%= @player.email %></a></p>
     <p>Date of Birth: <%= @player.dob.to_formatted_s(:long_ordinal) %></p>
+    <p>Height: <%= @player.height %></p>
+    <p>Weight: <%= @player.weight %></p>
     <p>Present Team: <%= @player.present_team %></p>
     <p>Current Level: <%= @player.level %></p>
     <p>Desired Position: <%= @player.desired_position %></p>
