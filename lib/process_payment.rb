@@ -12,7 +12,7 @@ class Payment
     @nonce = nonce
     @request_body = {
 
-      :card_nonce => nonce,
+      :card_nonce => @nonce,
 
       # Monetary amounts are specified in the smallest unit of the applicable currency.
       # This amount is in cents. It's also hard-coded for $1, which is not very useful.
