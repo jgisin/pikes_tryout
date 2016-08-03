@@ -1,5 +1,5 @@
   var paymentForm = new SqPaymentForm({
-    applicationId: 'sandbox-sq0idp-Gz2JHVsdpF1Jgx-n7RjPjw', // <-- Add your application ID here
+      applicationId: 'sq0idp - JRgV85tlNPYjlaHjHPEqNw' // <-- Add your application ID here
     inputClass: 'sq-input',
     inputStyles: [
       {
