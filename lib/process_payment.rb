@@ -17,7 +17,7 @@ class Payment
       # Monetary amounts are specified in the smallest unit of the applicable currency.
       # This amount is in cents. It's also hard-coded for $1, which is not very useful.
       :amount_money => {
-        :amount => 1,
+        :amount => 101,
         :currency => 'USD'
       },
 
