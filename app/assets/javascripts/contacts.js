@@ -1,3 +1,4 @@
+$(document).ready({
   var paymentForm = new SqPaymentForm({
       applicationId: 'sq0idp-JRgV85tlNPYjlaHjHPEqNw', // <-- Add your application ID here
     inputClass: 'sq-input',
@@ -78,4 +79,5 @@
         console.log('success');
         window.location.replace('/success?player_id=' + window.location.search[window.location.search.length - 1]);
     });
-  }
+  };
+});
